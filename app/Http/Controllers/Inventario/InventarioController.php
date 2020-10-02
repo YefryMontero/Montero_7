@@ -1,24 +1,45 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Inventario;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\Producto;
-use App\Http\Requests\ValidacionProducto;
 
-class ProductoController extends Controller
+class InventarioController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $objProductos = Producto::get();
-        return view('admin.productos.index', compact('objProductos'));
+    public function index(Request $request)
+    { 
+         
+        if(null ==$request->all()){
+            $objProductos = Producto::get();
+        }
+        else{
+             $objProductos = Producto::FiltrarPorNombre($request->busqueda)->get();
+        }
+        
+        
+        return view('inventario.index', compact('objProductos'));
     }
+
+    public function actualizarCantidad(Request $request,$id){
+           $objProducto = Producto::findOrFail($id);
+        $objProducto->update(array_filter($request->all()));
+        $mensajes = 'La cantidad de '.$objProducto->nombre.' A sido actualizada con exito';
+        return redirect('/inventario/inventario')->with('mensaje', $mensajes);
+    }
+
+    public function actualizarPrecio(Request $request,$id){
+        $objProducto = Producto::findOrFail($id);
+     $objProducto->update(array_filter($request->all()));
+     $mensajes = 'El precio  de '.$objProducto->nombre.' a sido actualizado con exito';
+     return redirect('/inventario/inventario')->with('mensaje', $mensajes);
+ }
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +48,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('admin.productos.crear');
+        //
     }
 
     /**
@@ -36,10 +57,9 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ValidacionProducto $request)
+    public function store(Request $request)
     {
-        $productos = Producto::create($request->all());
-        return redirect('/admin/productos')->with('mensaje', 'Producto creado con exito');
+        //
     }
 
     /**

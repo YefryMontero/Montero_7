@@ -13,6 +13,11 @@ class Producto extends Model
        'nombre',
        'descripcion',
        'precio',
-       'stock'
+       'stock',
+       'unidad_medida'
     ];
+
+    public function scopeFiltrarPorNombre($query, $texto, $boolean = 'or'){
+		return $query->where('nombre','like', '%'.$texto.'%', $boolean);
+    }
 }

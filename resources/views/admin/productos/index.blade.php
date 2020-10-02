@@ -7,6 +7,7 @@
 </div>
 </div>
 <div class="container-xl">
+    @include('include.mensaje');
     <div class="row">
         <div class="col">
             <div class="card">
@@ -14,7 +15,8 @@
                 </div>
 
                 <div class="card-body">
-                <a href="{{route('crear_producto')}}" class="btn btn-success btn-block">Registrar Producto </a>
+                <div class="form-group">
+                <a href="{{route('crear_producto')}}" class="btn btn-success btn-block"><i class="fa fa-fw fa-plus-circle"> </i> Registrar Producto </a>
                    <br>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

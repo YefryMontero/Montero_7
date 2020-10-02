@@ -82,7 +82,7 @@
                    		<input type="text" name="email" placeholder="Ingrese el Correo del Proveedor" class="form-control">
                    	</div>
                     <div class="form-group">
-                        <button class="btn btn-success btn-block">Registrar Proveedor </button>
+                        <button class="btn btn-success btn-block"> <i class="fa fa-fw fa-save"> </i> Guardar Proveedor </button>
                     </div>
                    </div>   
                 </form>

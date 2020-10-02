@@ -55,4 +55,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin' ], function(){
     Route::get('/productos/crear' , 'ProductoController@create')->name('crear_producto');
     Route::post('/productos', 'ProductoController@store')->name('guardar_producto');
 });
+//Rutas Inventario
+Route::group(['prefix' => 'inventario', 'namespace' => 'Inventario' ], function(){
+   Route::get('/inventario' , 'InventarioController@index')->name('inventario');
+   Route::post('/inventario/precio/{id}' , 'InventarioController@actualizarPrecio')->name('actualizar_precio');
+   Route::post('/inventario/cantidad/{id}' , 'InventarioController@actualizarCantidad')->name('actualizar_cantidad');
+});
 
+//Rutas  de las Facturas
+Route::group(['prefix' => 'facturas', 'namespace' => 'Facturas' ], function(){
+Route::get('/ventas', 'FacturaVentaController@index')->name('ventas');
+Route::get('/ventas/crear', 'FacturaVentaController@create')->name('crear_venta');
+Route::post('/ventas', 'FacturaVentaController@update')->name('guardar_venta');
+Route::post('/ventas/producto', 'FacturaVentaController@store')->name('guardar_producto');
+});
+
+Route::get('/gastos_y_compra', 'CarteraController@index')->name('cartera');

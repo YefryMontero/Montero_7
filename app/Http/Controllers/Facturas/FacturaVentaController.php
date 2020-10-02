@@ -1,23 +1,31 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Facturas;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Facturas\FacturaVenta\FacturaVenta;
+use App\Models\Admin\Cliente;
 use App\Models\Admin\Producto;
-use App\Http\Requests\ValidacionProducto;
 
-class ProductoController extends Controller
+class FacturaVentaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $objProductos = Producto::get();
-        return view('admin.productos.index', compact('objProductos'));
+        if(null ==$request->all()){
+            
+            $objVenta = FacturaVenta::get();
+        }
+        else{
+            dd($request);
+        $objVenta = FacturaVenta::get();
+        }
+        return view('facturas.facturasVenta.index', compact('objVenta'));
     }
 
     /**
@@ -27,7 +35,9 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('admin.productos.crear');
+        $objClientes = Cliente::orderBy('nombre')->get();
+        $objProductos = Producto::orderBy('nombre')->get();
+        return view('facturas.facturasVenta.crear', compact('objProductos','objClientes'));
     }
 
     /**
@@ -36,10 +46,15 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ValidacionProducto $request)
+    public function store(Request $request)
     {
-        $productos = Producto::create($request->all());
-        return redirect('/admin/productos')->with('mensaje', 'Producto creado con exito');
+        dd($request);
+        if ($request->ajax()) {
+           dd($request);
+        } else {
+            abort(404);
+        }
+        return view('facturas.facturasVenta.index');
     }
 
     /**

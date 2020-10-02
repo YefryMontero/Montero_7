@@ -28,7 +28,7 @@
                                </div>
                    		</div>
                     <div class="form-group">
-                        <button class="btn btn-success btn-block">Registrar Rol </button>
+                        <button class="btn btn-success btn-block"><i class="fa fa-fw fa-save"> </i> Guardar Rol </button>
                     </div>
                    </div>   
                 </form>

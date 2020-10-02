@@ -43,7 +43,7 @@
                         <div class="col">
                            <div class="form-group">
                               <label>Identificacion</label>
-                              <input type="text" name="num_id" placeholder="Ingrese el numero de Identificacion del Cliente" class="form-control">
+                              <input type="text"  required name="num_id" placeholder="Ingrese el numero de Identificacion del Cliente" class="form-control">
                            </div>
                          </div>   
                     </div>
@@ -52,13 +52,13 @@
                    			<div class="col">
                    				<div class="form-group">
                    		        <label>Nombre </label>
-                   		        <input type="text" name="nombre" placeholder="Ingrese el nombre del Usuario" class="form-control">
+                   		        <input type="text" required name="nombre" placeholder="Ingrese el nombre del Usuario" class="form-control">
                              	</div>
                    			</div>
                    			<div class="col">
                    				<div class="form-group">
                    		        <label>Apellido</label>
-                   		        <input type="text" name="apellido" placeholder="Ingrese el apellido del Cliente" class="form-control">
+                   		        <input type="text" required name="apellido" placeholder="Ingrese el apellido del Cliente" class="form-control">
                             	</div>
                    			</div>
                     	</div>
@@ -66,20 +66,20 @@
                        <div class="col">
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input type="text" name="celular" placeholder="Ingrese el Telefono del Cliente" class="form-control">
+                            <input type="text" required name="celular" placeholder="Ingrese el Telefono del Cliente" class="form-control">
                         </div>
                        </div>
                        <div class="col">
                         <div class="form-group">
                             <label>Direccion</label>
-                            <input type="text" name="direccion" placeholder="Ingrese la d00ireccion del Cliente" class="form-control">
+                            <input type="text" required name="direccion" placeholder="Ingrese la d00ireccion del Cliente" class="form-control">
                         </div>
                        </div>
                    </div>
                    
                    	<div class="form-group">
                    		<label>Correo</label>
-                   		<input type="text" name="email" placeholder="Ingrese el Correo del Cliente" class="form-control">
+                   		<input type="text" required name="email" placeholder="Ingrese el Correo del Cliente" class="form-control">
                    	</div>
                     <div class="form-group">
                         <button class="btn btn-success btn-block">Registrar Cliente </button>

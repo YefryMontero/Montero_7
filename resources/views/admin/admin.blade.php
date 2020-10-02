@@ -84,7 +84,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{route('roles')}}" class="btn btn-primary btn-block"><i class="fa fa-fw fa-user-tag"> </i> Ingresar al Modulo Roles</a>   
+                    <a href="{{route('roles')}}" class="btn btn-primary btn-block"><i class="fa fa-fw fa-id-card-alt"> </i> Ingresar al Modulo Roles</a>   
                 </div>
             </div>
         </div>

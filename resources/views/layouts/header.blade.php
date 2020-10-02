@@ -27,7 +27,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Inventario</a>
+            <a class="nav-link " href="{{route('inventario')}}" tabindex="-1" aria-disabled="true">Inventario</a>
             </li>
           </ul>
     </div>
@@ -41,7 +41,13 @@
         @else
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <i class="fa fa-fw fa-user"></i>     {{ Auth::user()->name }}
+                 
+                        <span class="hidden-xs-down"><i class="fa fa-fw fa-user"></i>{{ Auth::user()->name }}</span>
+                        <br>
+                        <span class="hidden-xs-down"><i class="fa fa-fw fa-id-card-alt"></i>{{session()->get('rol_nombre') ?? ''}}</span>
+                        <br>
+                        <span class="hidden-xs-down"><i class="fa fa-fw fa-calendar-day"></i>{{ \Carbon\Carbon::now()->toFormattedDateString() }}</span>
+                  
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

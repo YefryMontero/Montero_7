@@ -75,7 +75,6 @@ class User extends Authenticatable
     }
      
     public function scopeBuscarUsuario($query,$usuario,$password){
-
         return $query->where('usuario','=',$usuario ,'and','password','=',$password) ;
     }
     public function scopeBuscarId($query,$num_id){

@@ -10,7 +10,7 @@ var ValidacionesMontero = function () {
                 newestOnTop: true,
                 positionClass: 'toast-top-right',
                 preventDuplicates: true,
-                timeOut: '1000'
+                timeOut: '2000'
             };
             titulo='Montero'
             if (tipo == 'error') {

@@ -87,7 +87,7 @@
                     
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-success btn-block">Registrar Usuario </button>
+                        <button class="btn btn-success btn-block"><i class="fa fa-fw fa-save"> </i> Guardar Usuario </button>
                     </div>
                    </div>   
                 </form>
